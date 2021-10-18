@@ -21,5 +21,11 @@ struct fMember * insert_front(struct fMember *newP,  char *name, int age) {
   struct fMember *newGuy = heapMember(name, age);
   newGuy->next = newP;
   return newGuy;
+}
 
+void print_list(struct fMember *first) {
+  while (first) {
+    printMember(first);
+    first = first->next;
+  }
 }

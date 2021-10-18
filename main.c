@@ -17,11 +17,30 @@ int main() {
 
   struct fMember *dad = insert_front(mom, d, ag);
 
-  printMember(mom);
+  char  g[] = "Chui";
+  int age = (rand() / 100000000) + 60;
 
-  printMember(dad);
+  struct fMember *gMa = insert_front(dad, g, age);
 
-  printf("%s\n", dad->next->name);
-  free(mom);
+  char  au[] = "Karen";
+  int aage = (rand() / 100000000) + 30;
+
+  struct fMember *aunt = insert_front(gMa, au, aage);
+
+  char  u[] = "Jason";
+  int uage = (rand() / 100000000) + 40;
+
+  struct fMember *uncle = insert_front(aunt, u, uage);
+
+  print_list(uncle);
+  //
+  //
+  // printMember(mom);
+  //
+  // printMember(dad);
+  //
+  // printf("%s\n", dad->next->name);
+  // free(mom);
+  // free(dad);
   return 0;
 }
