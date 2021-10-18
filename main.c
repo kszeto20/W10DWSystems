@@ -33,14 +33,8 @@ int main() {
   struct fMember *uncle = insert_front(aunt, u, uage);
 
   print_list(uncle);
-  //
-  //
-  // printMember(mom);
-  //
-  // printMember(dad);
-  //
-  // printf("%s\n", dad->next->name);
-  // free(mom);
-  // free(dad);
+
+  struct fMember *toHold = free_list(uncle);
+  //printf("%s\n", toHold->name);
   return 0;
 }

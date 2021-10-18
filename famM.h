@@ -12,3 +12,5 @@ struct fMember * heapMember(char *n, int a);
 struct fMember * insert_front(struct fMember *newP,  char *name, int age);
 
 void print_list(struct fMember *first);
+
+struct fMember * free_list(struct fMember * toFree);

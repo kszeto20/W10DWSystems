@@ -29,3 +29,12 @@ void print_list(struct fMember *first) {
     first = first->next;
   }
 }
+
+struct fMember * free_list(struct fMember * toFree) {
+  while(toFree) {
+    struct fMember *nToFree = toFree->next;
+    free(toFree);
+    toFree = nToFree;
+  }
+  return toFree;
+}
