@@ -14,3 +14,5 @@ struct fMember * insert_front(struct fMember *newP,  char *name, int age);
 void print_list(struct fMember *first);
 
 struct fMember * free_list(struct fMember * toFree);
+
+struct fMember * remove_node(struct fMember *front, int data);

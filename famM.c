@@ -31,10 +31,31 @@ void print_list(struct fMember *first) {
 }
 
 struct fMember * free_list(struct fMember * toFree) {
-  while(toFree) {
+  while(toFree != NULL) {
     struct fMember *nToFree = toFree->next;
     free(toFree);
     toFree = nToFree;
   }
   return toFree;
+}
+
+struct fMember * remove_node(struct fMember *front, int data) {
+  if (front->age == data) {
+    front = front->next;
+    return front;
+  }
+  struct fMember * curr = front->next;
+  struct fMember * before = front;
+
+  while (curr) {
+    if (curr->age == data) {
+      before->next = curr->next;
+      return front;
+    }
+    else {
+      before = curr;
+      curr = curr->next;
+    }
+  }
+  return front;
 }

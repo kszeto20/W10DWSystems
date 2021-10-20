@@ -8,12 +8,12 @@ int main() {
   srand(time(NULL));
 
   char  m[] = "Vicki";
-  int a = (rand() / 100000000) + 40;
+  int a = (rand() / 100000000) + 4;
 
   struct fMember *mom = heapMember(m, a);
 
   char  d[] = "Chiu";
-  int ag = (rand() / 100000000) + 40;
+  int ag = 50;
 
   struct fMember *dad = insert_front(mom, d, ag);
 
@@ -33,6 +33,10 @@ int main() {
   struct fMember *uncle = insert_front(aunt, u, uage);
 
   print_list(uncle);
+  printf("----------------\n");
+  struct fMember * cutList = remove_node(uncle, 50);
+
+  print_list(cutList);
 
   struct fMember *toHold = free_list(uncle);
   //printf("%s\n", toHold->name);
